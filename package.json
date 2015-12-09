@@ -1,0 +1,19 @@
+{
+  "name": "lex-sort",
+  "version": "0.0.1",
+  "description": "",
+  "main": "sort.js",
+  "scripts": {
+    "test": "node tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmai/lex-sort.git"
+  },
+  "author": "Nick Mai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nmai/lex-sort/issues"
+  },
+  "homepage": "https://github.com/nmai/lex-sort#readme"
+}
