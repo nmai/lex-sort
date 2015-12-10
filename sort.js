@@ -15,26 +15,38 @@ let sort = function (input, order) {
     points[chr] = i + 1
   })
 
-  // @todo: convert this to factorial of largest point
-  let max = 0
-  points.map((x) => {
-    max += x
-  })
-
+  // Returns the calculated weight of strings based off the point
+  // values we just generated above
   function compute (str) {
     let weight = 0
-    str.split("").map((chr, i) => {
-      weight += (points[chr] + 1) * i //@todo: this is wrong, continue here
+    str.split('').map((chr, i) => {
+      weight += (points[chr] + 1) / (i + 1)
     })
     return weight
   }
 
-  // obligatory one-liner
-  let weights = input.map((str, i) => { return compute (s) })
+  // Create an array with our input strings mapped to their weight values.
+  // This is so we can sort easily.
+  let weighted = input.map((str) => {
+    return {
+      name: str,
+      weight: compute(str)
+    }
+  })
 
-  // sigh
-  // fastest is to calculate the position based off max points
-  // but i dunno. fast... not really clean though IMO.
+  // Sort the above array based off each item's "weight" key
+  weighted.sort((a, b) => {
+    if (a.weight > b.weight) {
+      return 1
+    }
+    if (a.weight < b.weight) {
+      return -1
+    }
+    return 0
+  })
+ 
+  // Return an array containing only the string values
+  return weighted.map((item) => {return item.name})
 }
 
 module.exports = sort
