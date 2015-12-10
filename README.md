@@ -1,8 +1,8 @@
 #lex-sort
 
-Use this module to sort an array of strings based on an arbitrary lexicographic ordering.
+Use this module to sort an array of strings based on an arbitrary lexicographic ordering. Babel transpilation is not set up so please use Node 4.0+.
 
-Babel transpilation is not set up so please use Node 4.0+
+Install: `npm install lex-sort`
 
 Example usage:
 
